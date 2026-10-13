@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f8f5">
+  <title>Company Assistant</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <div class="app" id="app">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand"><div class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3.5 20 8v8l-8 4.5L4 16V8l8-4.5Z"/><path d="m4.5 8.2 7.5 4.3 7.5-4.3M12 12.5v8"/></svg></div><div><div class="brand-name">Company Assistant</div><div class="brand-caption">A little more clarity, every day</div></div></div>
+      <button class="new-chat" id="newChat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14"/></svg>New conversation</button>
+      <div class="section-label">Your conversations</div>
+      <div class="chat-list" id="chatList"></div>
+      <div class="sidebar-bottom"><div class="profile"><div class="avatar" id="userAvatar">U</div><div class="profile-name" id="profileName">Signed in</div><button class="logout" id="logout" title="Sign out" aria-label="Sign out"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M10 17l5-5-5-5M15 12H3"/><path d="M12 3h6a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-6"/></svg></button></div></div>
+    </aside>
+    <main class="main">
+      <header class="topbar"><div class="topbar-left"><button class="mobile-menu" id="menuButton" aria-label="Open conversations"><svg viewBox="0 0 24 24" width="20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button><div><div class="top-title" id="topTitle">New conversation</div><div class="top-subtitle">Your thoughtful, helpful company guide</div></div></div><div class="online"><i></i> Assistant ready</div></header>
+      <section class="content" id="content">
+        <div class="welcome" id="welcome"><div class="welcome-symbol"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3.5 13.8 10l6.7 2-6.7 2-1.8 6.5L10.2 14l-6.7-2 6.7-2L12 3.5Z"/><path d="m19 3 .7 2.3L22 6l-2.3.7L19 9l-.7-2.3L16 6l2.3-.7L19 3Z"/></svg></div><div class="eyebrow">Your company, made clearer</div><h1>What can I help<br>you discover?</h1><p>Ask about our company, what we do, or anything you’d like to know. I’m here to help.</p><div class="suggestions"><button class="suggestion" data-prompt="What does the company do?"><b>Get to know us</b><span>What does the company do?</span></button><button class="suggestion" data-prompt="What products or services do you offer?"><b>Explore our offerings</b><span>What products or services do you offer?</span></button><button class="suggestion" data-prompt="How can I get in touch with the team?"><b>Find the right person</b><span>How can I get in touch with the team?</span></button><button class="suggestion" data-prompt="Tell me something interesting about the company."><b>Start with a story</b><span>Tell me something interesting about the company.</span></button></div></div>
+        <div class="messages hidden" id="messages" aria-live="polite"></div>
+        <div class="composer-wrap"><form class="composer" id="composer"><textarea id="prompt" rows="1" placeholder="Ask me anything about the company…" aria-label="Your message"></textarea><div class="composer-bottom"><span class="composer-hint">Enter to send · Shift + Enter for a new line</span><button class="send" id="sendButton" type="submit" aria-label="Send message"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button></div></form><div class="disclaimer">I use the information available to me to give you a helpful answer.</div></div>
+      </section>
+    </main>
+  </div>
+  <section class="auth-screen hidden" id="authScreen"><form class="auth-card" id="loginForm"><div class="auth-brand"><div class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3.5 20 8v8l-8 4.5L4 16V8l8-4.5Z"/><path d="m4.5 8.2 7.5 4.3 7.5-4.3M12 12.5v8"/></svg></div><div><div class="brand-name">Company Assistant</div><div class="brand-caption">A little more clarity, every day</div></div></div><h2>Welcome back.</h2><p>Sign in to continue your conversations with the company assistant.</p><label class="field" for="username">Username</label><input class="auth-input" id="username" autocomplete="username" required placeholder="Your username"><label class="field" for="password">Password</label><input class="auth-input" id="password" type="password" autocomplete="current-password" required placeholder="Your password"><button class="auth-submit" id="loginButton" type="submit">Sign in</button><div class="auth-error hidden" id="authError"></div></form></section>
+  <div class="error-toast hidden" id="toast" role="status"></div>
+  <script src="/static/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+fastapi
+uvicorn[standard]
+python-dotenv
+redis
+psycopg2-binary
+langchain-groq
+langchain-core
+langchain-community
+langchain-text-splitters
+qdrant-client
+sentence-transformers
+python-jose[cryptography]
