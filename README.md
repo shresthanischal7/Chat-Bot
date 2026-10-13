@@ -7,7 +7,8 @@ The included `about.txt` describes a fictional demonstration company and uses pl
 ## Requirements
 
 - Python 3.10 or newer
-- PostgreSQL and Redis services
+- PostgreSQL and Redis
+- Qdrant for Vector Databse
 - A Groq API key
 
 ## Setup
